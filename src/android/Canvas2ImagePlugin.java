@@ -89,20 +89,26 @@ public class Canvas2ImagePlugin extends CordovaPlugin {
 			 * 2.2
 			 */
 			if (check >= 1) {
-				folder = Environment
-					.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+				// folder = Environment
+				// 	.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 				
-				if(!folder.exists()) {
-					folder.mkdirs();
-				}
+				// if(!folder.exists()) {
+				// 	folder.mkdirs();
+				// }
+				String pathToExternalStorage = Environment.getExternalStorageDirectory().toString();
+				folder = new File(pathToExternalStorage + "/" + "Sportmaniacs");   
+				// have the object build the directory structure, if needed.
+				folder.mkdirs();
+
+
 			} else {
 				folder = Environment.getExternalStorageDirectory();
 			}
 			
-			File imageFile = new File(folder, "c2i_" + date.toString() + ".png");
+			File imageFile = new File(folder, "c2i_" + date.toString() + ".jpg");
 
 			FileOutputStream out = new FileOutputStream(imageFile);
-			bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
+			bmp.compress(Bitmap.CompressFormat.JPEG, 100, out);
 			out.flush();
 			out.close();
 
