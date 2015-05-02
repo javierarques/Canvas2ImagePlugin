@@ -38,6 +38,12 @@ public class Canvas2ImagePlugin extends CordovaPlugin {
 		if (action.equals(ACTION)) {
 
 			String base64 = data.optString(0);
+			String folderName = data.optString(1);
+
+			if (folderName.equals("")) // isEmpty() requires API level 9
+				folderName = "Pictures";		
+
+
 			if (base64.equals("")) // isEmpty() requires API level 9
 				callbackContext.error("Missing base64 string");
 			
@@ -96,7 +102,7 @@ public class Canvas2ImagePlugin extends CordovaPlugin {
 				// 	folder.mkdirs();
 				// }
 				String pathToExternalStorage = Environment.getExternalStorageDirectory().toString();
-				folder = new File(pathToExternalStorage + "/" + "Sportmaniacs");   
+				folder = new File(pathToExternalStorage + "/" + folderName);   
 				// have the object build the directory structure, if needed.
 				folder.mkdirs();
 

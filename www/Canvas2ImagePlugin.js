@@ -23,7 +23,7 @@
             return cordova.exec(successCallback, failureCallback, "Canvas2ImagePlugin","saveImageDataToLibrary",[imageData]);
         }
     },
-    saveImageToPhone: function (url, success, error) {
+    saveImageToPhone: function (url, folderName, success, error) {
         var canvas, context, imageDataUrl, imageData;
         var img = new Image();
         img.onload = function() {
@@ -40,7 +40,7 @@
                     error,
                     'Canvas2ImagePlugin',
                     'saveImageDataToLibrary',
-                    [imageData]
+                    [imageData,folderName]
                 );
             }
             catch(e) {
@@ -54,6 +54,5 @@
             error(e.message);
         }
     }
-
   };
   
