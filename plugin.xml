@@ -1,9 +1,9 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="org.devgeeks.Canvas2ImagePlugin"
+    id="com.javiarques.ImageToGallery"
     version="0.6.0">
 
-    <name>Canvas 2 Image</name>
+    <name>Image to Gallery</name>
 
     <engines>
         <engine name="cordova" version=">=3.0.0" />
