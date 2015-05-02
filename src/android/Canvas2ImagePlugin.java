@@ -72,7 +72,7 @@ public class Canvas2ImagePlugin extends CordovaPlugin {
 		}
 	}
 
-	private File savePhoto(Bitmap bmp) {
+	private File savePhoto(Bitmap bmp, String folderName) {
 		File retVal = null;
 		
 		try {
