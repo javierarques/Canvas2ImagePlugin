@@ -56,12 +56,12 @@ public class Canvas2ImagePlugin extends CordovaPlugin {
 			} else {
 				
 				// Save the image
-				File imageFile = savePhoto(bmp);
+				File imageFile = savePhoto(bmp, folderName);
 				if (imageFile == null)
 					callbackContext.error("Error while saving image");
 				
 				// Update image gallery
-				scanPhoto(imageFile, folderName);
+				scanPhoto(imageFile);
 				
 				callbackContext.success(imageFile.toString());
 			}
